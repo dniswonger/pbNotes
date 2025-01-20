@@ -17,7 +17,7 @@ const meta: Meta<typeof DeleteNote> = {
 export default meta;
 type Story = StoryObj<typeof DeleteNote>;
 
-const onCancel = () => { console.log('cancel') }
+//const onCancel = () => { console.log('cancel') }
 
 export const Desktop: Story = {
     args: {
