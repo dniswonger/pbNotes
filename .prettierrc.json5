@@ -10,7 +10,7 @@
   arrowParens: 'always',
   jsxBracketSameLine: false,
   endOfLine: 'lf',
-  tailwindConfig: './tailwind.config.js',
+  tailwindConfig: './tailwind.config.ts',
   // 对非标准属性进行排序
   tailwindAttributes: ['wrapperClassName', 'wrapClassName', 'rootClassName'],
   // 对函数调用中的类进行排序
