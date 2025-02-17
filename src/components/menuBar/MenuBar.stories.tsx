@@ -15,7 +15,7 @@ const meta: Meta<typeof MenuBar> = {
 } satisfies Meta<typeof MenuBar>;
 
 export default meta;
-type Story = StoryObj<typeof MenuBar>;
+type Story = StoryObj<typeof meta>;
 
 //const onCancel = () => { console.log('cancel') }
 

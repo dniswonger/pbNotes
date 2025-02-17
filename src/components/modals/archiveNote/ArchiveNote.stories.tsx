@@ -15,7 +15,7 @@ const meta: Meta<typeof ArchiveNote> = {
 } satisfies Meta<typeof ArchiveNote>;
 
 export default meta;
-type Story = StoryObj<typeof ArchiveNote>;
+type Story = StoryObj<typeof meta>;
 
 //const onCancel = () => { console.log('cancel') }
 

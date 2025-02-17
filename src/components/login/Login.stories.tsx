@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import DeleteNote from './DeleteNote';
+import Login from './Login';
 
-const meta: Meta<typeof DeleteNote> = {
-    title: 'Components/Modals/DeleteNote',
-    component: DeleteNote,
+
+const meta: Meta<typeof Login> = {
+    title: 'Components/Login',
+    component: Login,
     parameters: {
         layout: 'centered',
 
@@ -12,7 +13,7 @@ const meta: Meta<typeof DeleteNote> = {
     argTypes: {
 
     },
-} satisfies Meta<typeof DeleteNote>;
+} satisfies Meta<typeof Login>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

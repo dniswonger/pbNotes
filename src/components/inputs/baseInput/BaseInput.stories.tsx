@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import DeleteNote from './DeleteNote';
+import BaseInput from './BaseInput';
 
-const meta: Meta<typeof DeleteNote> = {
-    title: 'Components/Modals/DeleteNote',
-    component: DeleteNote,
+
+const meta: Meta<typeof BaseInput> = {
+    title: 'Components/Inputs/BaseInput',
+    component: BaseInput,
     parameters: {
         layout: 'centered',
 
@@ -12,7 +13,7 @@ const meta: Meta<typeof DeleteNote> = {
     argTypes: {
 
     },
-} satisfies Meta<typeof DeleteNote>;
+} satisfies Meta<typeof BaseInput>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -20,8 +21,11 @@ type Story = StoryObj<typeof meta>;
 //const onCancel = () => { console.log('cancel') }
 
 export const Desktop: Story = {
+    render: (args) => {
+        return <BaseInput {...args} />
+    },
     args: {
-
+        placeholder: 'Base Example',
     }
 };
 

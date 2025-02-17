@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import DeleteNote from './DeleteNote';
+import MaskedInput from './MaskedInput';
 
-const meta: Meta<typeof DeleteNote> = {
-    title: 'Components/Modals/DeleteNote',
-    component: DeleteNote,
+
+const meta: Meta<typeof MaskedInput> = {
+    title: 'Components/Inputs/MaskedInput',
+    component: MaskedInput,
     parameters: {
         layout: 'centered',
 
@@ -12,7 +13,7 @@ const meta: Meta<typeof DeleteNote> = {
     argTypes: {
 
     },
-} satisfies Meta<typeof DeleteNote>;
+} satisfies Meta<typeof MaskedInput>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -20,8 +21,15 @@ type Story = StoryObj<typeof meta>;
 //const onCancel = () => { console.log('cancel') }
 
 export const Desktop: Story = {
+    render: (args) => {
+        return <MaskedInput {...args} />
+    },
     args: {
-
+        label: 'Password',
+        placeholder: 'Password',
+        infoText: 'Password must be at least 8 characters long',
+        isErrored: true,
+        disabled: false,
     }
 };
 

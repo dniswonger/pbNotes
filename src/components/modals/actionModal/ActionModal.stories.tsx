@@ -18,7 +18,7 @@ const meta: Meta<typeof ActionModal> = {
 } satisfies Meta<typeof ActionModal>;
 
 export default meta;
-type Story = StoryObj<typeof ActionModal>;
+type Story = StoryObj<typeof meta>;
 
 const onCancel = () => { console.log('cancel') }
 
