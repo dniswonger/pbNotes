@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import MaskedInput from './MaskedInput';
+import PasswordField from './PasswordField';
 
 
-const meta: Meta<typeof MaskedInput> = {
-    title: 'Components/Inputs/MaskedInput',
-    component: MaskedInput,
+const meta: Meta<typeof PasswordField> = {
+    title: 'Components/fields/PasswordField',
+    component: PasswordField,
     parameters: {
         layout: 'centered',
 
@@ -13,7 +13,7 @@ const meta: Meta<typeof MaskedInput> = {
     argTypes: {
 
     },
-} satisfies Meta<typeof MaskedInput>;
+} satisfies Meta<typeof PasswordField>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Desktop: Story = {
     render: (args) => {
-        return <MaskedInput {...args} />
+        return <PasswordField {...args} />
     },
     args: {
         label: 'Password',
@@ -30,6 +30,7 @@ export const Desktop: Story = {
         infoText: 'Password must be at least 8 characters long',
         isErrored: true,
         disabled: false,
+        onForgotPassword: () => { }
     }
 };
 

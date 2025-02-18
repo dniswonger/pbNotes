@@ -3,28 +3,34 @@ import HidePasswordIcon from "../../../assets/images/icon-hide-password.svg?reac
 import InfoIcon from "../../../assets/images/icon-info.svg?react"
 import { forwardRef, InputHTMLAttributes, useState } from "react"
 import { cn } from "@/lib/utils"
-
-type MaskedInputProps = InputHTMLAttributes<HTMLInputElement> & {
+import LinkButton from "../../buttons/linkButton/LinkButton"
+type PasswordFieldProps = InputHTMLAttributes<HTMLInputElement> & {
     label?: string;
     infoText?: string;
     isErrored?: boolean;
+    onForgotPassword?: () => void;
 }
 
-const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(({ className, label, infoText, isErrored, disabled, ...props }, ref) => {
+const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(({ className, label, infoText, isErrored, disabled, onForgotPassword, ...props }, ref) => {
 
     const [isMasked, setIsMasked] = useState(true);
 
     return (
         <div className="flex flex-col gap-[6px]">
-            {label &&
-                <label htmlFor="email" className="sans-preset4 text-neutral-950">{label}</label>
-            }
+            <div className="flex items-center justify-between">
+                {label &&
+                    <label htmlFor="password" className="sans-preset4 text-neutral-950">{label}</label>
+                }
+                {onForgotPassword &&
+                    <LinkButton onClick={onForgotPassword}>Forgot?</LinkButton>
+                }
+            </div>
             <div className={cn("flex flex-row justify-between items-center border border-neutral-200 rounded-lg p-2 outline-none",
-                "focus:ring-2 focus:ring-[#99A0AE] focus:ring-offset-2 focus:border focus:border-black",
+                "focus-within:ring-2 focus-within:ring-[#99A0AE] focus-within:ring-offset-2 focus-within:border focus-within:border-black",
                 disabled && "bg-neutral-50",
                 isErrored && "border-red-500",
                 className)}>
-                <input ref={ref} disabled={disabled} type={isMasked ? "password" : "text"}  {...props}
+                <input ref={ref} disabled={disabled} type={isMasked ? "password" : "text"}  {...props} id="password"
                     className={cn("text-preset5 text-neutral-950  placeholder:text-neutral-500 border-none hover:border-none focus:bocus-none outline-none disabled:bg-neutral-50",
                         isMasked && "text-xs"
                     )} />
@@ -42,4 +48,4 @@ const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(({ className,
     )
 })
 
-export default MaskedInput;
+export default PasswordField;

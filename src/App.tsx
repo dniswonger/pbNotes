@@ -1,10 +1,9 @@
-import ArchiveNote from "./components/modals/archiveNote/ArchiveNote";
-
+import Login from "./components/login/Login";
 
 const App = () => {
   return (
     <div>
-      <ArchiveNote />
+      <Login />
     </div>
   );
 };

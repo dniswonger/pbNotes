@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import PrimaryInput from './PrimaryInput';
+import TextField from './TextField';
 
-const meta: Meta<typeof PrimaryInput> = {
-  title: 'Components/Inputs/PrimaryInput',
-  component: PrimaryInput,
+const meta: Meta<typeof TextField> = {
+  title: 'Components/Fields/TextField',
+  component: TextField,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {},
-} satisfies Meta<typeof PrimaryInput>;
+} satisfies Meta<typeof TextField>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Desktop: Story = {
   render: (args) => {
-    return <PrimaryInput {...args} />;
+    return <TextField {...args} />;
   },
   args: {
     label: 'Email Address',
